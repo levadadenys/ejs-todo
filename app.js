@@ -5,7 +5,7 @@ const capitalize = require('lodash/capitalize')
 const app = express()
 const port = process.env.PORT || 3000
 
-mongoose.connect('mongodb://localhost:27017/todolistDB')
+mongoose.connect('mongodb+srv://admin-denys:Test123@cluster0.iwprznw.mongodb.net/todolistdb?retryWrites=true&w=majority')
 
 const itemsSchema = mongoose.Schema({
     name: String,
@@ -20,13 +20,13 @@ const Item = new mongoose.model('Item', itemsSchema)
 const List = new mongoose.model('List', listSchema)
 
 const item1 = new Item({
-    name: 'buy milk'
+    name: 'Welcome to your todolist!'
 })
 const item2 = new Item({
-    name: 'drink milk'
+    name: 'Hit the + button to add a new item'
 })
 const item3 = new Item({
-    name: 'sleep'
+    name: '<-- Hit this to delete an item.'
 })
 
 const defaultItems = [item1, item2, item3]
